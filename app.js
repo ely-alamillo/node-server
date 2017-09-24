@@ -22,11 +22,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors(corsOptions));
 app.use(morgan('dev'));
+app.use(express.static(__dirname));
 
 // const { routes } = require('./api/routes/routes');
 // routes(app);
 
 app.get('/', (req, res) => {
+  res.render("index")
+});
+app.get('/api', (req, res) => {
   res.send('hello from node server!')
 });
 
