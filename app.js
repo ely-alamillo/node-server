@@ -34,6 +34,6 @@ app.get('/api', (req, res) => {
   res.send('hello from node server!')
 });
 
-app.listen(3030, () => {
+app.listen(process.env.PORT, '0.0.0.0', () => {
   console.log('server running on port 3030');
 });
